@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --radius-app: 1.75rem;
+  --shadow-soft: 0 20px 45px -12px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Segoe UI', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 可拖动区域：用于窗口标题栏等空白处，支持无边框窗口拖动 */
+.drag-region {
+  -webkit-app-region: drag;
+}
+
+/* 可交互元素需显式声明 no-drag，否则会被父级 drag-region 覆盖，导致无法点击 */
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 130, 0.35);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
